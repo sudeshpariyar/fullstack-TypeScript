@@ -1,0 +1,13 @@
+.register-form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 50%;
+}
+.register-submit-button{
+    padding-block: 0.8rem;
+    background-color:chocolate;
+    color: white;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}

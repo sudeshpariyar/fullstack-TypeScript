@@ -1,0 +1,10 @@
+.error-wrapper{
+    margin-top: 1rem;
+    border: 1px solid #e6e6e6;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: red;
+    background-color:rgb(224, 174, 174);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
