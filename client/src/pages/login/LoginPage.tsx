@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import axios from "axios";
 import PageWrapper from "../../components/page-wrapper/PageWrapper";
 import { useNavigate } from "react-router-dom";
 import ErrorMessage from "../../components/errorMessage/ErrorMessage";
+import axios from "../../helper/ApiHelper";
 
 const LoginPage = () => {
   const email = useRef("");
@@ -13,7 +13,7 @@ const LoginPage = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/generalinfo/login", {
+      .post("generalinfo/login", {
         email: email.current,
         password: password.current,
       })
@@ -24,7 +24,6 @@ const LoginPage = () => {
         }
       })
       .catch((err) => {
-        console.log(err);
         setErr(err.message);
       });
   };

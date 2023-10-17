@@ -1,28 +1,34 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./register.css";
 import PageWrapper from "../../components/page-wrapper/PageWrapper";
-import axios from "axios";
+import axios from "../../helper/ApiHelper";
+import { useNavigate } from "react-router-dom";
+import ErrorMessage from "../../components/errorMessage/ErrorMessage";
 
 const Register = () => {
   const firstName = useRef("");
   const lastName = useRef("");
   const email = useRef("");
   const password = useRef("");
+  const navigate = useNavigate();
+  const [err, setErr] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/generalinfo", {
+      .post("generalinfo", {
         firstName: firstName.current,
         lastName: lastName.current,
         email: email.current,
         password: password.current,
       })
       .then((res) => {
-        console.log(res);
+        if (res.data) {
+          navigate("/login");
+        }
       })
       .catch((err) => {
-        console.log(err);
+        setErr(err.message);
       });
   };
 
@@ -58,6 +64,7 @@ const Register = () => {
             <button className="register-submit-button" type="submit">
               Submit
             </button>
+            {err && <ErrorMessage errMessage={err} />}
           </form>
         </div>
       </PageWrapper>

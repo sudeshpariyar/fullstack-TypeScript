@@ -10,7 +10,7 @@ const app: Express = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use("/generalinfo", generalInfoRouter);
+app.use("/api/generalinfo", generalInfoRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Welcome on the Typescript server!");
@@ -18,7 +18,7 @@ app.get("/", (req: Request, res: Response) => {
 
 AppDataSource.initialize()
   .then(() => {
-    app.listen(process.env.PORT, () => {
+    app.listen(process.env.PORT || 4000, () => {
       console.log("listening on express application");
     });
   })
