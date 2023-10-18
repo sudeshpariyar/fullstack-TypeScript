@@ -7,6 +7,7 @@ import axios from "../../helper/ApiHelper";
 const LoginPage = () => {
   const email = useRef("");
   const password = useRef("");
+  const userId = useRef("");
   const navigate = useNavigate();
   const [err, setErr] = useState("");
 
@@ -19,8 +20,9 @@ const LoginPage = () => {
       })
       .then((res) => {
         console.log(res);
+        userId.current = res.data.uuid;
         if (res.data) {
-          navigate("/welcome");
+          navigate(`/welcome/${userId.current}`);
         }
       })
       .catch((err) => {
