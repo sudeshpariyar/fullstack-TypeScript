@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- background-color: lightsteelblue;
+ background-color: rgb(121, 176, 248);
 }
 
 code {
@@ -33,7 +33,7 @@ button{
   font-weight: 500;
 }
 
-input{
+input,textarea{
   padding: 0.5rem;
   border-radius: 0.5rem;
   outline: none;
@@ -41,5 +41,4 @@ input{
 }
 label{
   font-size: 0.8rem;
- 
 }

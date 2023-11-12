@@ -1,7 +1,6 @@
 .header-wrapper{
     background-color: white;
-    width: 100%;
-    padding: 1rem;
+    width: 100%;  
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,6 +12,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: 1rem;
 }
 .header-content-right{
     display: flex;

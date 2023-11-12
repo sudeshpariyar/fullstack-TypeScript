@@ -5,12 +5,16 @@ import cors from "cors";
 
 import { AppDataSource } from "./database";
 import generalInfoRouter from "./routes/generalInfo";
+import userRouter from "./routes/user";
+import postRouter from "./routes/post";
 
 const app: Express = express();
 app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/api/generalinfo", generalInfoRouter);
+app.use("/api/user", userRouter);
+app.use("/api/post", postRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Welcome on the Typescript server!");

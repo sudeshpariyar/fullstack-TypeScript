@@ -1,0 +1,25 @@
+.welcome-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.welcome-box{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+
+}
+.user-name{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.new-post{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+.add-new-post{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 50%;
+}
