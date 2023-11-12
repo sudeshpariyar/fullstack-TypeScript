@@ -56,7 +56,7 @@ const WelcomePage = () => {
     <PageWrapper title="">
       <div className="welcome-wrapper">
         <div className="welcome-box">
-          <span>Welcome</span>
+          <span>Welcome test</span>
           <div className="user-name">{userInfo?.firstName},</div>
         </div>
 
